@@ -35,10 +35,8 @@ CmtEffectCreateStarbase = {
 		event_target:CmtTargetTransferSystem = { create_starbase = { size = starbase_outpost owner = prev } }
 	} else_if = {
 		limit = {
-			OR = {
-				is_country_type = fallen_empire
-				is_country_type = awakened_fallen_empire
-			}
+			
+				is_fallen_empire = yes
 		}
 		event_target:CmtTargetTransferSystem = {
 			if = {

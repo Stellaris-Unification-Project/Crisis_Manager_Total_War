@@ -71,7 +71,7 @@ CmtTriggerStarbaseShouldLocked = {
 	solar_system = {
 		any_ship_in_system = {
 			NOR = {
-				owner = { is_same_value = prevprevprev.owner }
+				is_owned_by = prevprevprev.owner
 				is_ship_class = shipclass_starbase
 				is_ship_class = shipclass_military_station
 				is_ship_class = shipclass_science_ship

@@ -197,7 +197,7 @@ fleet_event = {
 		from = {		## solar_system
 			any_ship_in_system = {
 				exists = owner
-				NOT = { owner = { is_same_value = prevprev.starbase.owner } }
+				NOT = { is_owned_by = prevprev.starbase.owner }
 				is_ship_class = shipclass_military
 			}
 		}
@@ -223,8 +223,7 @@ event = {
 	immediate = {
 		every_system = {
 			limit = { exists = starbase }
-			random_system_planet = {
-				limit = { is_star = yes }
+			star = {
 				planet_event = { id = CrisisManagerControl.0223 days =  5 }
 				planet_event = { id = CrisisManagerControl.0223 days = 15 }
 				planet_event = { id = CrisisManagerControl.0223 days = 25 }
@@ -254,7 +253,7 @@ planet_event = {
 			NOT = {
 				any_ship_in_system = {
 					exists = owner
-					owner = { is_same_value = root.solar_system.starbase.owner }
+					is_owned_by = root.solar_system.starbase.owner
 					is_ship_class = shipclass_military
 				}
 			}
@@ -277,7 +276,7 @@ planet_event = {
 					CmtTriggerIsStarbaseCountry = yes
 					CmtTriggerIsCrisisKillerCountry = yes
 				}
-				NOT = { is_same_value = root.solar_system.starbase.owner }
+				NOT = { is_same_empire = root.solar_system.starbase.owner }
 				any_owned_fleet = {
 					is_ship_class = shipclass_military
 					any_owned_ship = { solar_system = { is_same_value = root.solar_system } }
@@ -298,7 +297,7 @@ planet_event = {
 					CmtTriggerIsStarbaseCountry = yes
 					CmtTriggerIsCrisisKillerCountry = yes
 				}
-				NOT = { is_same_value = root.solar_system.starbase.fleet.owner }
+				NOT = { is_same_empire = root.solar_system.starbase.fleet.owner }
 				any_owned_fleet = {
 					is_ship_class = shipclass_military
 					solar_system = { is_same_value = root.solar_system }
