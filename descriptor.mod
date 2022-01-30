@@ -14,4 +14,4 @@ tags={
 }
 picture="CmtP40_thumb.png"
 remote_file_id="1500853276"
-supported_version="2.3.*"
+supported_version="3.2.2"
